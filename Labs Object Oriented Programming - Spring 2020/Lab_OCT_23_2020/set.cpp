@@ -32,6 +32,7 @@ class Set{
         }
     }
     bool add(const char ELEMENT){
+
         if (isExist(ELEMENT))        return false;
         data [ currentSize++ ] = ELEMENT;
         return true;
