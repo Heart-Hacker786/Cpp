@@ -37,7 +37,7 @@ a:
 		cout << "\t |         ***************************         |" << endl;
 		cout << "\t |         ***************************         |" << endl;
 		cout << "\t |         ***************************         |" << endl;
-		cout << "\t |         ***********    WELCOME    ***********         |" << endl;
+		cout << "\t |     ***********    WELCOME    ***********      |" << endl;
 		cout <<"\t |         ***************************         |" << endl;
 		cout << "\t |         ***************************         |" << endl;
 		cout << "\t |         ***************************         |" << endl;
@@ -108,7 +108,7 @@ a:
 			 {
 
 				 cout << "\t\t___________________" << endl;
-				 cout << " \t\t|             How many Stores you Enter               |" << endl;
+				 cout << " \t\t|  How many Stores you Enter|" << endl;
 				 cout << "\t\t|___________________|" << endl;
 				 cin >> store_quantity;
 

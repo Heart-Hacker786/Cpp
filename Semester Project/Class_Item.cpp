@@ -28,7 +28,8 @@ ostream& operator <<(ostream &out,const Item i){
     <<right<<setfill('0')<<setw(2)<<i.expiry_date<<"-"<<setfill('0')<<setw(2)<<i.expiry_month<<"-"<<i.expiry_year<<"\n\n";
     return out;
 }
-/*int main(){
+/*
+int main(){
     Item i("Albuterol Sulfate","China National Chemical Engineering Co",95,8,2,2025,20);
     cout<<i;
     cout<<"this is it\n";
