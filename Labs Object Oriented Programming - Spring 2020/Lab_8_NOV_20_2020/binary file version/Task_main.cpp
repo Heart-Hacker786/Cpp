@@ -29,23 +29,7 @@ class Match{
 
 int main(){
     Match M;
-
-    fstream io("Read",ios::binary);
-    int arr[12];
-    io.read(char*(arr),sizeof(int)*12);
-    
     for(int i=0;i<Teamcount;i++){
-        M.t[i].set(a[i],a[++i]);
-    }
-    //sets total and wickets from binary file in format
-    //total wickets without spaces in binary
-
-
-    
-
-    
-    for(int i=0;i<Teamcount;i++){
-
         M.t[i].readplayer();
     }
     int win=M.compare();
