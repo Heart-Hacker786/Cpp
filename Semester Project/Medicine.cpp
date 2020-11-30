@@ -20,9 +20,17 @@ class Medicine:public Item{
 };
 ostream& operator <<(ostream &out,const Medicine m){
     cout<<Item(m);
+    out<<'\n'<<"Section: ";
     out<<m.sec<<'\n';
     out<<"Requires Doctor Prescription:";
     if(m.doc_pres){out<<"Yes\n\n";}
     else {out<<"No\n\n";}
     return out;
 }
+/*
+int main(){
+    Medicine m("Albuterol Sulfate","China National Chemical Engineering Co",95,8,2,2025,20,"Genetics",true);
+    cout<<m;
+    
+        return 0;
+}*/

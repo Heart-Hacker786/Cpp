@@ -1,24 +1,24 @@
 #include<iostream>
 #include<iomanip>
 #include<string.h>
+#include"date.cpp"
 
 using namespace std;
 class Item{
 
     char name[30],company[40];
-    int price,expiry_month,expiry_date,expiry_year;
-    int stock;
-    
+    int price,stock;
+    date d;
     void copy(char name[]="",char company[]="",
-        int price=0,int date=0,int month=0,
+        int price=0,int day=0,int month=0,
         int year=0,int stock=0){
             
             strcpy(this->name,name);
             strcpy(this->company,company);
             this->price=price;
-            expiry_date=date;
-            expiry_month=month;
-            expiry_year=year;
+            d.set_day(day);
+            d.set_month(month);
+            d.set_year(year);
             this->stock=stock;
         }
     public:
@@ -45,21 +45,22 @@ ostream& operator <<(ostream &out,const Item i){
     <<setw(25)<<"Item"
     <<setw(50)<<"Company"
     <<setw(7)<<"Price"
-    <<"Available Quantity "<<"Expiry Date  "<<"Section"<<"\n";
+    <<"Available Quantity "<<"Expiry Date  "<<"\n";
     
     out<<setw(25)<<i.name
     <<setw(50)<<i.company
     <<setw(7)<<i.price
     <<setw(19)<<i.stock
-    <<right<<setfill('0')<<setw(2)<<i.expiry_date<<"-"<<setw(2)<<i.expiry_month<<"-"<<i.expiry_year<<"   ";
+    <<right<<setfill('0')<<setw(2)<<i.d<<"   ";
     out<<setfill(' ');
     return out;
 }
-
-/*int main(){
+/*
+int main(){
     Item i;
+    cout<<i<<"\n\n";
+    i.set("Albuterol Sulfate","China National Chemical Engineering Co",95,8,2,2025,20);
     cout<<i;
-    i.set("Albuterol Sulfate","China National Chemical Engineering Co",95,8,2,2025,20,"Genetics");
-    cout<<i;
-    cout<<"this is it\n";char name[]="",char company[]="",int price=0,int date=0,int month=0,int yechar name[]="",char company[]="",int price=0,int date=0,int month=0,int year=0,int stock=0,char sec[]=""){ar=0,int stock=0,char sec[]=""){
+    cout<<"this is it\n";//char name[]="",char company[]="",int price=0,int date=0,int month=0,int yechar name[]="",char company[]="",int price=0,int date=0,int month=0,int year=0,int stock=0,char sec[]=""){ar=0,int stock=0,char sec[]=""){
+        return 0;
 }*/

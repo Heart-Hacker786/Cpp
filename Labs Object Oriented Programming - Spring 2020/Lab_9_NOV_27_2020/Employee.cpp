@@ -7,7 +7,7 @@
 using namespace std;
 
 class Employee{
-    
+
     int employee_no;
     date d;
     friend ostream& operator <<(ostream& out,const Employee &d);

@@ -10,12 +10,13 @@ class customerdata:public persondata{
 	unsigned int cus_no;
 	bool allow;
 	char cusemail[50];
-	
+
 public:
         customerdata(unsigned int cus_no=0,char cusemail[]="",bool allow=true){
 	        this-> cus_no = cus_no;
 	        strcpy(this->cusemail,cusemail);
 	        this-> allow = allow;
+
 	}
 void set_cusno(){
         this->cus_no=cus_no;
@@ -29,7 +30,7 @@ string getcusemail()const{return cusemail;}
 
 friend ostream& operator << (ostream &out, const customerdata &b);
 
-~customerdata(){}
+
 
 };
 ostream& operator << (ostream &out, const customerdata &b)

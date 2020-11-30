@@ -33,3 +33,24 @@ cout<<"Setter One\n\n";
 
 file.close();
 }
+
+
+
+
+
+
+class a{
+    void funtion(int a,int b){}
+}
+class b:public a{
+    void funtion(int a){}
+}
+class c:public b{
+    void funtion(int a){}
+    void funtion(int a,int b){}
+
+}
+
+c ajsndo;
+
+ajsndo.function(5,5);
