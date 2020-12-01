@@ -5,7 +5,7 @@
 
 using namespace std;
 class Item{
-
+protected:
     char name[30],company[40];
     int price,stock;
     date d;

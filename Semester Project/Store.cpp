@@ -15,7 +15,7 @@ class Store{
         strcpy(this->store_name,name);
         this->count=count;
         for(int j=0;j<count;j++){
-        //    cin>>namei>>company>>price>>date>>month>>year>>stock>>sec>>doc;
+           //cin>>namei>>company>>price>>date>>month>>year>>stock>>sec>>doc;
         m[j].set(iname,company,price,date,month,year,stock,sec,doc);
         }
     }
@@ -27,8 +27,11 @@ class Store{
     void set(int count,char name[],char iname[],char company[],int price,int date,int month,int year,int stock,char sec[],bool doc){
         copy(count,name,iname,company,price,date,month,year,stock,sec,doc);
     }
+    void Medicine_set(){}
+
 
     friend ostream& operator <<(ostream &out,const Store &s);
+    friend void Filehandle(const Store &S);
 };
 ostream& operator <<(ostream &out,const Store &s){
     int j;
@@ -37,4 +40,14 @@ ostream& operator <<(ostream &out,const Store &s){
         cout<<s.m[j];
     }
     return out;
+}
+int main(){
+
+
+    Store M(50,"Islamia Pharmacy");
+    for(int i=0;i<50;i++){
+        cin>>a>>b>>c>>d>>e>>f;
+        M.Medicine_set();
+    }
+    //ofstream out("Output.bin",ios::out|ios::binary);
 }
