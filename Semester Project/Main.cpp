@@ -7,23 +7,40 @@
 using namespace std;
 
 int main(){
-    
-    login();
+    Store S=FileRead();
+    //login();
 
-int choice=1;
+int choice=5;
 
     switch(choice){
         
         case 1:
-            Store S=FileRead();
+             S=FileRead();
+            cout<<"\n\n"<<S;
+            break;
+        case 2:
+             S=FileRead();
+            cout<<"\n\n"<<S;
+            break;
+        case 3:
+             S=FileRead();
+            cout<<"\n\n"<<S;
+            break;
+        case 4:
+             S=FileRead();
+            cout<<"\n\n"<<S;
+            break;
+        case 5:
+             S=FileRead();
+            cout<<"\n\n"<<S;
+            break;
+        case 6:
             cout<<S;
             break;
 
-
-
-
     }
     
+		cout << "\n\n" << "*******|Enter Operation Number: ";
 
 
 
