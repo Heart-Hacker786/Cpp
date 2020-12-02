@@ -6,7 +6,7 @@
 using namespace std;
 class Item{
 protected:
-    char name[30],company[40];
+    char name[30],company[45];
     int price,stock;
     date d;
     void copy(char name[]="",char company[]="",
@@ -43,16 +43,16 @@ ostream& operator <<(ostream &out,const Item i){
     out<<left
     
     <<setw(25)<<"Item"
-    <<setw(50)<<"Company"
+    <<setw(45)<<"Company"
     <<setw(7)<<"Price"
-    <<"Available Quantity "<<"Expiry Date  "<<"\n";
+    <<"Stock "<<"Expiry Date  "<<"\n";
     
     out<<setw(25)<<i.name
-    <<setw(50)<<i.company
+    <<setw(45)<<i.company
     <<setw(7)<<i.price
-    <<setw(19)<<i.stock
-    <<right<<setfill('0')<<setw(2)<<i.d<<"   ";
-    out<<setfill(' ');
+    <<setw(6)<<i.stock
+    <<i.d;
+    out<<setfill(' ')<<right;
     return out;
 }
 /*
