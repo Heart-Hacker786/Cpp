@@ -42,21 +42,3 @@ ostream& operator <<(ostream &out,const Medicine m){
     else {out<<"No\n\n";}
     return out;
 }
-
-void Filehandle(const Medicine m[]){
-    ofstream out("input.bin",ios::out|ios::binary);
-    out.seekp(0);
-    char a[50];strcpy(a,"Islamia Pharmacy");
-    out.write(a,sizeof(char)*50);
-int count=50;
-    out.write((char*)&count,sizeof(int));
-
-   // out.write((char*)&S.store_name,sizeof(char)*50);
-    for(int i=0;i<count;i++){
-        out.write((char*)&m[i],sizeof(Medicine));
-        cout<<m[i];
-        }
-    //out.write((char*)&S.store_name,sizeof(char)*50);
-    //for(i=0;i<5;i++){ }
-    out.close();
-}

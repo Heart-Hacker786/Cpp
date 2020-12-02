@@ -9,25 +9,23 @@ class Store{
     char store_name[50];
     int count;
     
-    void copy(int count,char name[],char iname[],char company[],int price,int date,int month,int year,int stock,char sec[],bool doc){
+    void copy(int count,char name[]){
 
         m=new Medicine[count];
         strcpy(this->store_name,name);
         this->count=count;
-        for(int j=0;j<count;j++){
-           //cin>>namei>>company>>price>>date>>month>>year>>stock>>sec>>doc;
-        m[j].set(iname,company,price,date,month,year,stock,sec,doc);
-        }
     }
 
     public:
-    Store(int count=0,char name[]="",char iname[]="",char company[]="",int price=0,int date=0,int month=0,int year=0,int stock=0,char sec[]="",bool doc=false){
-        copy(count,name,iname,company,price,date,month,year,stock,sec,doc);
+    Store(int count=0,char name[]=""){
+        copy(count,name);
     }
-    void set(int count,char name[],char iname[],char company[],int price,int date,int month,int year,int stock,char sec[],bool doc){
-        copy(count,name,iname,company,price,date,month,year,stock,sec,doc);
+    void set(int count,char name[]){
+        copy(count,name);
     }
-    void Medicine_set(){}
+    void Medicine_set(int i,char name[],char company[],int price,int date,int month,int year,int stock,char sec[],bool doc){
+        m[i].set(name,company,price,date,month,year,stock,sec,doc);
+    }
 
 
     friend ostream& operator <<(ostream &out,const Store &s);
@@ -41,6 +39,7 @@ ostream& operator <<(ostream &out,const Store &s){
     }
     return out;
 }
+/*
 int main(){
 
 
@@ -50,4 +49,4 @@ int main(){
         M.Medicine_set();
     }
     //ofstream out("Output.bin",ios::out|ios::binary);
-}
+}*/

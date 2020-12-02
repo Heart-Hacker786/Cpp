@@ -1,11 +1,12 @@
 #include<iostream>
 #include<string.h>
-#include"Store.cpp"
+//#include"Store.cpp"
+#include"FileHandling.cpp"
 
 using namespace std;
 
 int main(){
-    Store m(2,"Islamia Pharmacy","Albuterol Sulfate","China National Chemical Engineering Co",95,8,2,2025,20,"Genetics",true);
+    Store m(50,"Islamia Pharmacy");
     cout<<m;
     return 0;
 }
