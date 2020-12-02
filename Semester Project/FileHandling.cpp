@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void Filehandle(const Store &S){
+void FileWrite(const Store &S){
     ofstream out("input.bin",ios::out|ios::binary);
     out.seekp(0);
     char a[50];strcpy(a,"Islamia Pharmacy");
@@ -20,4 +20,24 @@ void Filehandle(const Store &S){
         out.write((char*)&S.m[i],sizeof(Medicine));
         }
     out.close();
+}
+
+Store FileRead(){
+    
+    ifstream in("input.bin",ios::out|ios::binary);
+    in.seekg(0);
+    
+    char a[50];int count;
+    in.read(a,sizeof(char)*50);
+    in.read((char*)&count,sizeof(int));
+
+Store S(count,a);
+
+Medicine m;
+    for(int i=0;i<count;i++){
+        in.read((char*)&m,sizeof(Medicine));
+        S.m[i]=m;
+        }
+    in.close();
+    return S;
 }

@@ -5,6 +5,8 @@
 using namespace std;
 
 class Store{
+        public:
+
     Medicine *m;
     char store_name[50];
     int count;
@@ -16,7 +18,6 @@ class Store{
         this->count=count;
     }
 
-    public:
     Store(int count=0,char name[]=""){
         copy(count,name);
     }
@@ -27,14 +28,20 @@ class Store{
         m[i].set(name,company,price,date,month,year,stock,sec,doc);
     }
 
+    void operator =(const Store &S){
+        copy(S.count,S.store_name);
+    }
 
     friend ostream& operator <<(ostream &out,const Store &s);
     friend void Filehandle(const Store &S);
 };
 ostream& operator <<(ostream &out,const Store &s){
-    int j;
-    out<<"\t\t\t\t\t\t"<<s.store_name<<"\n";
-    for(j=0;j<s.count;j++){
+    
+    out<<s.store_name<<"\n\n";
+
+    cout<<"No. of Records: "<<s.count<<"\n\n";
+
+    for(int j=0;j<s.count;j++){
         cout<<s.m[j];
     }
     return out;

@@ -2,11 +2,18 @@
 #include<string.h>
 //#include"Store.cpp"
 #include"FileHandling.cpp"
+#include"ExtraFunctions.cpp"
 
 using namespace std;
 
 int main(){
-    Store m(50,"Islamia Pharmacy");
-    cout<<m;
+    
+    login();
+
+    Store S=FileRead();
+    cout<<S;
+
+
+
     return 0;
 }
