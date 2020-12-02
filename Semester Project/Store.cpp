@@ -11,7 +11,7 @@ class Store{
     char store_name[50];
     int count;
     
-    void copy(int count,char name[]){
+    void copy(int count,const char name[]){
 
         m=new Medicine[count];
         strcpy(this->store_name,name);
@@ -30,6 +30,7 @@ class Store{
 
     void operator =(const Store &S){
         copy(S.count,S.store_name);
+        m=S.m;
     }
 
     friend ostream& operator <<(ostream &out,const Store &s);

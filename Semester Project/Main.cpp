@@ -10,8 +10,20 @@ int main(){
     
     login();
 
-    Store S=FileRead();
-    cout<<S;
+int choice=1;
+
+    switch(choice){
+        
+        case 1:
+            Store S=FileRead();
+            cout<<S;
+            break;
+
+
+
+
+    }
+    
 
 
 
