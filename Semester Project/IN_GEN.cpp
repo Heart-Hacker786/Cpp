@@ -6,16 +6,18 @@
 using namespace std;
 int main(){
 
-    int a[5],b[5],i;
-    for(i=0;i<5;i++){cin>>a[i];}
-    ofstream in("input.bin",ios::out|ios::binary);
-    in.write((char*)a,sizeof(int)*5);
+    char a[25]="Abdul Mateen",b[10]="arslan";int i;
+    ofstream in("id.bin",ios::out|ios::binary);
+    in.write((char*)a,sizeof(char)*25);
+    in.write((char*)b,sizeof(char)*10);
     in.close();
  cout<<"\n\n";
 
-    ifstream out("input.bin",ios::in|ios::binary);
+    ifstream out("id.bin",ios::in|ios::binary);
     //seekg(0,ios::beg);
-    out.read((char*)b,sizeof(int)*5);
-    for(i=0;i<5;i++){cout<<b[i]<<" ";}
+    out.read(a,sizeof(char)*25);
+    out.read(b,sizeof(char)*10);
+    cout<<a<<' ';
+    cout<<b;
     
 }

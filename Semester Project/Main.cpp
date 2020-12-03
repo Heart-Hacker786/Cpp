@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
     Store S=FileRead();
-    //login();
+    login();
 
 int choice=5;
 

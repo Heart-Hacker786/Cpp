@@ -23,7 +23,7 @@ void login()
 {
 	fstream data;
 	data.open("id.txt", ios::in);
-	cin >> l >> p;
+	data >> l >> p;
 a:
 	cout << "Enterthe Login Id : ";
 	getline(cin, l1);
