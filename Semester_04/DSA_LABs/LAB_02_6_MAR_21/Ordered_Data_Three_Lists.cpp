@@ -54,7 +54,7 @@ int main(){
         cin>>n2;
         switch(n1){
             case 0:
-                 n3 = sizeof(l0) / sizeof(l0[0]);
+                n3 = sizeof(l0) / sizeof(l0[0]);
                 quickSort(l0,l1,l2,0,n3-1);
                 break;
             case 1:
