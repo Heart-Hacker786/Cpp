@@ -33,7 +33,7 @@ void additive_divide(int num){
    int p1,p2;
 
 
-    while(num!=5 && num!=2){
+    while(num!=2&&num!=1){
         arr[count++]=num;
         into_parts(num,p1,p2);
         print(num,p1,p2);
@@ -47,12 +47,9 @@ void additive_divide(int num){
         }
         num=S.seeTop();
         S.pop();
-        while(num!=5 && num!=2 && num!=3){
-            if(S.isEmpty())
+        while(num!=2&&num!=1){
+            if(checkexist(num)){
                 break;
-            if(checkexist(S.seeTop())){
-                S.pop();
-                continue;
             }
             arr[count++]=num;
             into_parts(num,p1,p2);
