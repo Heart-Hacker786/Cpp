@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <ctime>
 #include<cmath>
-#include<Node.cpp>
 
 using namespace std;
 
@@ -65,6 +64,7 @@ public:
 	int countNodes(BTNode *t){
 		int count = 0;
 		if (t != NULL) {
+			count++;
 			count = countNodes(t);
 		}
 		return count;
@@ -83,17 +83,22 @@ public:
 	}
 
 	int inOrderArray(BTNode *t, int *array, int index){
+		
 		if (t!=NULL){
-			//call function for left of tree and get index
-			//store value of current node in array according to index
-			//call function for right of tree with index+1 and get index
+			int index = 0; 
+			inOrderArray(root->left,array,index); 
+			array[index++] = root->data; 
+			inOrderArray(root->right,array,index+1); 
 			return index;
 		}
 		return index;
 	}
+	int inOrderArrayCaller(int *array, int index){
+		inOrderArray(root,array,index);
+	}
 	void addBinarySearch(int *array, int start, int end){
 		if (start<=end){
-			//calculate middle index
+			int middle=(start+end)/2;
 			//add element in BST from middle 
 			//call same function for left sub-array
 			//call same function for right sub-array
@@ -167,5 +172,8 @@ int main(){
 	tree.checkAndBalance();
 	tree.preorder();
 	tree.inorder();
+	int array[1000];
+	tree.inOrderArrayCaller(array,0);
+
 	return 0;
 }
